@@ -12,6 +12,7 @@
 .logo {
     height: 4rem;
     padding: .6rem;
+    fill: rgba(240,248,255,1);
 }
 
 .header nav {
@@ -36,7 +37,7 @@
     align-items: center;
     gap: .5rem;
     background-color: transparent;
-    border: .1rem solid rgba(255,255,255,1);
+    border: .1rem solid rgba(240,248,255,1);
     border-radius: 5rem;
     padding: .6rem 1.2rem;
     font-size: 1rem;
@@ -47,7 +48,7 @@
 
 .header button:hover { border-color: rgba(97,218,251,1); }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     .header {
         flex-direction: column;
         justify-content: center;

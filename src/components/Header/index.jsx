@@ -14,7 +14,7 @@ const Header = () => {
         <Link to="/about">Sobre</Link>
         <Link to="/projects">Projetos</Link>
       </nav>
-      <button type="button"><IoMdDownload/>Baixar CV</button>
+      <button type="button"><IoMdDownload aria-hidden={true}/>Baixar CV</button>
     </header>
   )
 }
