@@ -25,7 +25,7 @@ const Home = () => {
             <a href="https://www.linkedin.com/in/jperluxo/" target="_blank" rel="noopener noreferrer">
               <span><FaLinkedin aria-hidden={true}/>LinkedIn</span>
             </a>
-            <a href={data.profile?.html_url} target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/JPerluxo" target="_blank" rel="noopener noreferrer">
               <span><FaGithub aria-hidden={true}/>GitHub</span>
             </a>
           </div>

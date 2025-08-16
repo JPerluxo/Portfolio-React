@@ -6,7 +6,25 @@
     font-weight: 400;
 }
 
-html, body { height: 100%; }
+:root, * { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 0;
+}
 
 body {
     margin: 0;
