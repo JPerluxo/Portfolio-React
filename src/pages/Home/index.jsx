@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./index.module.css";
 
-import useGitHubData from "../../hooks/useGitHubData";
+import { useGitHubProfile } from "../../hooks/useGitHubData";
+import ProfilePic from "../../images/profile_pic.jpg"
 import { BiLogoGmail } from "react-icons/bi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Home = () => {
-  const { data, loading, error } = useGitHubData();
+  const { avatarUrl, loading, error } = useGitHubProfile();
 
   return (
     <section className={styles.home}>
-      {loading ? (<p className={styles.message}>Carregando...</p>) : error ? <p className={styles.errorMessage}>Erro ao carregar dados: {error}</p> : <>
+      {loading ? (<p className={styles.message}>Carregando...</p>) : <>
         <div className={styles.textContainer}>
           <h1>Jefferson Perluxo Clemente</h1>
           <p>
@@ -31,7 +32,7 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.photoContainer}>
-          <img src={data.profile?.avatar_url} alt="Foto do GitHub" loading="lazy"/>
+          <img src={error ? ProfilePic : avatarUrl} alt="Foto do GitHub" loading="lazy"/>
         </div>
       </>}
     </section>
