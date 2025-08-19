@@ -1,0 +1,23 @@
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding: 2rem 6rem;
+}
+
+.message, .errorMessage {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+}
+
+.errorMessage { color: rgba(255,0,0,1); }
+
+@media (max-width: 768px) {
+    .projects {
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1.25rem;
+    }
+}
