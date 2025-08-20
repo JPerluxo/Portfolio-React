@@ -9,7 +9,6 @@ const Header = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/Curriculum_Vitae.pdf";
-    link.download = "Jefferson-Perluxo-Clemente-CV.pdf";
     link.click();
   };
 

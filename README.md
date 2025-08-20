@@ -3,6 +3,8 @@
 Este projeto é um portfólio desenvolvido em **React** para apresentar meus projetos, experiências e aprendizados.  
 Ele consome dados diretamente da **[API do GitHub](https://docs.github.com/pt/rest)**, exibindo informações dos meus repositórios.
 
+🔗 Acesse aqui: https://jperluxo.vercel.app/
+
 ### Execução
 
 - Dependências:
