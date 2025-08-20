@@ -1,7 +1,7 @@
 .header {
     padding: 0 5%;
-    background-color: rgba(255,255,255,.03);
-    box-shadow: 0 .4rem 1rem .5rem rgba(0,0,0,.1);
+    background-color: var(--glass-bg-color);
+    box-shadow: 0 .4rem 1rem .5rem var(--shadow-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +12,7 @@
 .logo {
     height: 4rem;
     padding: .6rem;
-    fill: rgba(240,248,255,1);
+    fill: var(--text-color);
 }
 
 .header nav {
@@ -30,14 +30,14 @@
     transition: .5s;
 }
 
-.header nav a:hover { color: rgba(97,218,251,1); }
+.header nav a:hover { color: var(--accent-color); }
 
 .header button {
     display: flex;
     align-items: center;
     gap: .5rem;
     background-color: transparent;
-    border: .1rem solid rgba(240,248,255,1);
+    border: .1rem solid var(--text-color);
     border-radius: 5rem;
     padding: .6rem 1.2rem;
     font-size: 1rem;
@@ -46,7 +46,7 @@
     transition: .5s;
 }
 
-.header button:hover { border-color: rgba(97,218,251,1); }
+.header button:hover { border-color: var(--accent-color); }
 
 @media (max-width: 768px) {
     .header {

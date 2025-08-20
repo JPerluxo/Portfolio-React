@@ -11,7 +11,7 @@
     font-size: larger;
 }
 
-.errorMessage { color: rgba(255,0,0,1); }
+.errorMessage { color: var(--error-color); }
 
 @media (max-width: 768px) {
     .projects {

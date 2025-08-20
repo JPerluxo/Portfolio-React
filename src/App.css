@@ -1,7 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
 
+:root {
+  --accent-color: rgba(97,218,251,1);
+  --text-color: rgba(240,248,255,1);
+  --error-color: rgba(255,0,0,1);
+  --gradient-color-1: rgba(67,72,91,1);
+  --gradient-color-2: rgba(19,24,33,1);
+  --glass-bg-color: rgba(255,255,255,.05);
+  --shadow-color: rgba(0,0,0,.08);
+}
+
 * {
-    color: rgba(240,248,255,1);
+    color: var(--text-color);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
@@ -30,7 +40,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(67,72,91,1) 0%, rgba(19,24,33,1) 90.5% );
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, var(--gradient-color-1) 0%, var(--gradient-color-2) 90.5% );
     background-size: cover;
     background-attachment: fixed;
 }
