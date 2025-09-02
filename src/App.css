@@ -1,13 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
 
 :root {
-  --accent-color: rgba(97,218,251,1);
-  --text-color: rgba(240,248,255,1);
-  --error-color: rgba(255,0,0,1);
-  --gradient-color-1: rgba(67,72,91,1);
-  --gradient-color-2: rgba(19,24,33,1);
-  --glass-bg-color: rgba(255,255,255,.05);
-  --shadow-color: rgba(0,0,0,.08);
+    --accent-color: rgba(97,218,251,1);
+    --text-color: rgba(240,248,255,1);
+    --error-color: rgba(255,0,0,1);
+    --gradient-color-1: rgba(67,72,91,1);
+    --gradient-color-2: rgba(19,24,33,1);
+    --color-scheme-icon-color-1: rgba(82,182,154,1);
+    --color-scheme-icon-color-2: rgba(217,237,146,1);
+    --glass-bg-color: rgba(255,255,255,.05);
+    --shadow-color: rgba(0,0,0,.08);
+}
+
+.lightTheme {
+    --accent-color: rgba(3,83,164,1);
+    --text-color: rgba(50,48,49,1);
+    --error-color: rgba(186,24,27,1);
+    --gradient-color-1: rgba(238,240,242,1);
+    --gradient-color-2: rgba(234,230,219,1);
+    --color-scheme-icon-color-1: rgba(255,0,128,1);
+    --color-scheme-icon-color-2: rgba(255,140,0,1);
 }
 
 * {
