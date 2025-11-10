@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import BLACKLIST from "../blacklist";
 
 const profileUrl = "https://api.github.com/users/JPerluxo";
 
@@ -210,7 +211,8 @@ export function useGitHubRepos(options = { fetchLanguages: true, concurrency: 5,
           languages: r.languages_url ? langsMap[r.languages_url] || [] : [],
         }));
 
-        if (isMounted.current) setRepos(final);
+        const blacklist = new Set(BLACKLIST.map((n) => String(n).trim().toLowerCase()));
+        if (isMounted.current) setRepos(final.filter((r) => !blacklist.has(String(r.name).trim().toLowerCase())));
       } catch (err) {
         if (err && err.name === "AbortError") return;
         if (isMounted.current) setError(err.message || "Erro desconhecido");
