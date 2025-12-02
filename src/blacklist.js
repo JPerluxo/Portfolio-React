@@ -1,7 +1,8 @@
 const BLACKLIST = [
   "JPerluxo",
   "JPerluxo-Mod-Minecraft",
-  "E-Commerce-LES"
+  "E-Commerce-LES",
+  "github-readme-stats"
 ];
 
 export default BLACKLIST;
