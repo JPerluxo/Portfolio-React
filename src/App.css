@@ -10,6 +10,7 @@
     --color-scheme-icon-color-2: rgba(217,237,146,1);
     --glass-bg-color: rgba(255,255,255,.05);
     --shadow-color: rgba(0,0,0,.08);
+    --modal-blur-color: rgba(0,0,0,.75);
 }
 
 .lightTheme {

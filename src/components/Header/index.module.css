@@ -99,6 +99,24 @@
 
 .header button:hover { border-color: var(--accent-color); }
 
+.modal {
+    position: absolute;
+    background: radial-gradient( circle farthest-corner at 10% 20%, var(--gradient-color-1) 0%, var(--gradient-color-2) 90.5% );
+    box-shadow: 0 0 .5rem .25rem var(--shadow-color);
+    border-radius: .75rem;
+    padding: .5rem;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--modal-blur-color);
+    backdrop-filter: blur(4px);
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;

@@ -3,15 +3,12 @@ import styles from "./index.module.css";
 
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { Link } from "react-router-dom";
-import { IoMdDownload } from "react-icons/io";
+import { FaFile } from "react-icons/fa6";
+import Modal from "react-modal";
 
 const Header = () => {
   const [theme, setTheme] = useState("dark");
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Curriculum_Vitae.pdf";
-    link.click();
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.className = theme === "light" ? "lightTheme" : "";
@@ -28,7 +25,10 @@ const Header = () => {
         <Link to="/projects">Projetos</Link>
       </nav>
       <div>
-        <button type="button" onClick={handleDownload}><IoMdDownload aria-hidden={true}/>Baixar CV</button>
+        <button type="button" onClick={() => setIsModalOpen(true)}><FaFile aria-hidden={true}/>Visualizar CV</button>
+        <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} style={{content: {inset: "5%"}}} className={styles.modal} overlayClassName={styles.modalOverlay}>
+          <iframe src="/Curriculum_Vitae.pdf" width="100%" height="100%" style={{ border: "none" }} title="Currículo"/>
+        </Modal>
         <label>
           <input type="checkbox" role="switch" onChange={() => setTheme(theme === "light" ? "dark" : "light")} checked={theme === "light"} title={Tooltip} name="isLightMode"/>
           <span title={Tooltip}/>
