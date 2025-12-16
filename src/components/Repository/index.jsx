@@ -29,7 +29,7 @@ const Repository = ({ repoData }) => {
             <li key={language}>{language}</li>
           ))}
         </ul>
-      </div>  
+      </div>
       <div className={styles.links}>
         <a href={repoData.url} target="_blank" rel="noopener noreferrer">Repositório no GitHub</a>
         {repoData.homepage && (<a href={repoData.homepage} target="_blank" rel="noopener noreferrer">URL da solução</a>)}
