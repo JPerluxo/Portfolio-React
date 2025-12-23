@@ -14,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        <div className="background"/>
         <Header/>
         <main className="main">
           <Routes>

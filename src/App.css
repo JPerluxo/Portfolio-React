@@ -8,9 +8,14 @@
     --gradient-color-2: rgba(19,24,33,1);
     --color-scheme-icon-color-1: rgba(82,182,154,1);
     --color-scheme-icon-color-2: rgba(217,237,146,1);
+    --hero-background-color-1: rgba(0,0,0,1);
+    --hero-background-color-2: rgba(0,0,0,.75);
+    --hero-background-color-3: rgba(0,0,0,0);
+    --hero-background-color-4: rgba(255,255,255,.06);
+    --hero-background-color-5: rgba(255,255,255,.08);
     --glass-bg-color: rgba(255,255,255,.05);
     --shadow-color: rgba(0,0,0,.08);
-    --modal-blur-color: rgba(0,0,0,.75);
+    --modal-blur-color: rgba(0,0,0,.7);
 }
 
 .lightTheme {
@@ -21,6 +26,11 @@
     --gradient-color-2: rgba(234,230,219,1);
     --color-scheme-icon-color-1: rgba(255,0,128,1);
     --color-scheme-icon-color-2: rgba(255,140,0,1);
+    --hero-background-color-1: rgba(255,255,255,1);
+    --hero-background-color-2: rgba(238,242,247,.95);
+    --hero-background-color-3: rgba(238,242,247,0);
+    --hero-background-color-4: rgba(3,83,164,.08);
+    --hero-background-color-5: rgba(3,83,164,.12);
 }
 
 * {
@@ -41,6 +51,17 @@ html, body, #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, var(--gradient-color-1) 0%, var(--gradient-color-2) 90.5% );
+    background-size: cover;
+    transform: translateZ(0);
+    pointer-events: none;
 }
 
 .main {
@@ -53,7 +74,4 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%, var(--gradient-color-1) 0%, var(--gradient-color-2) 90.5% );
-    background-size: cover;
-    background-attachment: fixed;
 }
