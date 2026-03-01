@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.css";
 
-import Logo from "@/images/logo.svg";
+import Logo from "../../images/logo.svg";
 import Link from "next/link";
 import { FaFile } from "react-icons/fa6";
 import Modal from "react-modal";

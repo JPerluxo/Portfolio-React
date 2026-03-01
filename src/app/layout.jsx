@@ -1,6 +1,7 @@
 import "./layout.css";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Meu Portfólio",
@@ -17,6 +18,7 @@ const RootLayout = ({ children }) => {
           <main className="main">
             {children}
           </main>
+          <Footer/>
         </div>
       </body>
     </html>
