@@ -7,6 +7,9 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
     return config;
+  },
+  images: {
+    remotePatterns: [new URL('https://avatars.githubusercontent.com/**')],
   }
 };
 
