@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="pt-BR">
       <body>
-        <div className="app">
+        <div id="app-root" className="app">
           <div className="background"/>
           <Header/>
           <main className="main">

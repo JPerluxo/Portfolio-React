@@ -16,7 +16,7 @@ const Header = () => {
   }, [theme]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") Modal.setAppElement(document.body);
+    if (typeof window !== "undefined") Modal.setAppElement("#app-root");
   }, []);
 
   const Tooltip = `Modo ${theme === "light" ? "escuro" : "claro"}`;

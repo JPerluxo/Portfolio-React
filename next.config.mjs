@@ -9,7 +9,12 @@ const nextConfig = {
     return config;
   },
   images: {
-    remotePatterns: [new URL('https://avatars.githubusercontent.com/**')],
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'avatars.githubusercontent.com',
+      port: '',
+      pathname: '/**'
+    }]
   }
 };
 
