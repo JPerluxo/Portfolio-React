@@ -12,7 +12,13 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) setTheme(stored);
+  }, []);
+
+  useEffect(() => {
     document.documentElement.className = theme === "light" ? "lightTheme" : "";
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   useEffect(() => {
