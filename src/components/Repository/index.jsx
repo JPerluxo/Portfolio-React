@@ -3,11 +3,10 @@ import styles from "./index.module.css";
 
 const Repository = ({ repoData }) => {
   const formattedDate = new Date(repoData.created_at).toLocaleDateString("pt-BR");
-  const imagePath = `/thumbs/${repoData.name}.png`;
 
   return (
     <article className={styles.repository}>
-      <img src={imagePath} alt={`Thumbnail do projeto ${repoData.name}`} loading="lazy" onError={(e) => { e.currentTarget.src = "/thumbs/No-Image.png"; }}/>
+      <img src={repoData.thumbnail} alt={`Thumbnail do projeto ${repoData.name}`} loading="lazy"/>
       <div className={styles.meta}>
         <h3>{repoData.name}</h3>
         <p>{repoData.description}</p>

@@ -1,7 +1,10 @@
 import BLACKLIST from "./blacklist";
+import fs from "fs";
+import path from "path";
 
 const BASE_URL = "https://api.github.com/users/JPerluxo";
 const REVALIDATE_TIME = 60 * 60 * 24;
+const thumbsDir = path.join(process.cwd(), "public", "thumbs");
 
 export async function getGitHubProfile() {
   const res = await fetch(BASE_URL, {
@@ -62,5 +65,9 @@ export async function getGitHubRepos() {
     reposWithLanguages.push(...chunkResults);
   }
 
-  return reposWithLanguages;
+  return reposWithLanguages.map((repo) => {
+    const filePath = path.join(thumbsDir, `${repo.name}.png`);
+    const thumbnail = fs.existsSync(filePath) ? `/thumbs/${repo.name}.png` : "/thumbs/No-Image.png";
+    return { ...repo, thumbnail };
+  });
 }

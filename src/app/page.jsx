@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 
 import Image from "next/image";
 import { getGitHubProfile } from "../libs/github";
-import ProfilePic from "@/images/profile_pic.jpg";
+import ProfilePic from "../images/profile_pic.jpg";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
