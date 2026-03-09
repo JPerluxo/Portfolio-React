@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  min-height: 4rem;
 }
 
 .logo {
@@ -15,7 +15,33 @@
   fill: var(--text-color);
 }
 
-.header nav {
+.mobileMenuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+
+.mobileMenuToggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.menuContainer nav {
   display: flex;
   align-items: center;
   gap: 3.5rem;
@@ -23,21 +49,37 @@
   justify-content: center;
 }
 
-.header nav a {
+.menuContainer nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1rem;
   transition: .5s;
 }
 
-.header nav a:hover { color: var(--accent-color); }
+.menuContainer nav a:hover { color: var(--accent-color); }
 
-.header div {
+.menuContainer div {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
+
+.menuContainer button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background-color: transparent;
+  border: .1rem solid var(--text-color);
+  border-radius: 5rem;
+  padding: .6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: .5s;
+}
+
+.menuContainer button:hover { border-color: var(--accent-color); }
 
 .header label {
   display: block;
@@ -83,28 +125,13 @@
   background: linear-gradient(40deg,var(--color-scheme-icon-color-1),var(--color-scheme-icon-color-2) 70%);
 }
 
-.header button {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  background-color: transparent;
-  border: .1rem solid var(--text-color);
-  border-radius: 5rem;
-  padding: .6rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: .5s;
-}
-
-.header button:hover { border-color: var(--accent-color); }
-
 .modal {
   position: absolute;
   background: radial-gradient( circle farthest-corner at 10% 20%, var(--gradient-color-1) 0%, var(--gradient-color-2) 90.5% );
   box-shadow: 0 0 .5rem .25rem var(--shadow-color);
   border-radius: .75rem;
   padding: .5rem;
+  z-index: 1002;
 }
 
 .modalOverlay {
@@ -115,26 +142,45 @@
   bottom: 0;
   background-color: var(--modal-blur-color);
   backdrop-filter: blur(4px);
+  z-index: 1003;
 }
 
 @media (max-width: 768px) {
-  .header {
+  .mobileMenuToggle { display: flex; }
+
+  .activeToggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+
+  .activeToggle span:nth-child(2) { opacity: 0; }
+
+  .activeToggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+  .menuContainer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px 0 15px var(--shadow-color);
     flex-direction: column;
     justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    transition: right 0.4s ease;
+    z-index: 1000;
   }
 
-  .logo { height: 3rem; }
+  .activeMenu { right: 0; }
 
-  .header nav {
+  .menuContainer nav {
     flex-direction: column;
-    gap: 1rem;
-    font-size: .9rem;
+    gap: 1.5rem;
+    font-size: 1.1rem;
   }
 
-  .header div { margin-bottom: .8rem; }
-
-  .header button {
-    font-size: .9rem;
-    padding: .5rem .8rem;
+  .menuContainer div {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }

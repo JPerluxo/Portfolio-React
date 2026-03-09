@@ -1,6 +1,6 @@
 # 🌐 Meu Portfólio Pessoal
 
-Este projeto é um portfólio desenvolvido em **React** e **Next.js** para apresentar meus projetos, experiências e aprendizados.  
+Este projeto é um portfólio desenvolvido em **React** e **Next.js** para apresentar meus projetos, experiências e aprendizados.
 Ele consome dados diretamente da **[API do GitHub](https://docs.github.com/pt/rest)**, exibindo informações dos meus repositórios.
 
 🔗 Acesse aqui: https://jperluxo.vercel.app/
