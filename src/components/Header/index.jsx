@@ -26,6 +26,14 @@ const Header = () => {
     if (typeof window !== "undefined") Modal.setAppElement("#app-root");
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) window.scrollTo({ top: 0, behavior: "smooth" });
+    if (isMobileMenuOpen || isModalOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+
+    return () => document.body.style.overflow = "";
+  }, [isMobileMenuOpen, isModalOpen]);
+
   const Tooltip = `Modo ${theme === "light" ? "escuro" : "claro"}`;
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);

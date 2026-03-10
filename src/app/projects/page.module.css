@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   padding: 2rem 6rem;
+  justify-items: center;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease-out forwards;
@@ -26,7 +27,6 @@
 @media (max-width: 768px) {
   .projects {
     justify-content: center;
-    justify-items: center;
     grid-template-columns: repeat(1, 1fr);
     padding: 1.25rem;
   }
