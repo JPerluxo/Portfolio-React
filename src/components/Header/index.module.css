@@ -146,6 +146,16 @@
 }
 
 @media (max-width: 768px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 999;
+  }
+
   .mobileMenuToggle { display: flex; }
 
   .activeToggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }

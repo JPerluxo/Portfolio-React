@@ -41,6 +41,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Logo className={styles.logo}/>
+      {isMobileMenuOpen && (<div className={styles.overlay} onClick={closeMobileMenu}/>)}
       <button className={`${styles.mobileMenuToggle} ${isMobileMenuOpen ? styles.activeToggle : ""}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Alternar menu">
         <span></span>
         <span></span>
