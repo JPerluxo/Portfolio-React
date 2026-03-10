@@ -11,22 +11,34 @@ export async function getGitHubProfile() {
     next: { revalidate: REVALIDATE_TIME },
   });
 
-  if (!res.ok) throw new Error("Erro ao buscar perfil do GitHub");
+  const text = await res.text();
+  let data = null;
 
-  const json = await res.json();
-  return { avatarUrl: json.avatar_url };
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {}
+  if (!res.ok) throw new Error(data?.message || `${res.status} — ${res.statusText}`);
+  if (!data) throw new Error("A API não retornou um JSON válido.");
+
+  return { avatarUrl: data.avatar_url };
 }
 
 export async function getGitHubRepos() {
-  const res = await fetch(`${BASE_URL}/repos`, {
+  const res = await fetch(`${BASE_URL}/repos?per_page=100`, {
     next: { revalidate: REVALIDATE_TIME },
   });
 
-  if (!res.ok) throw new Error("Erro ao buscar repositórios");
+  const text = await res.text();
+  let data = null;
 
-  const repos = await res.json();
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {}
+  if (!res.ok) throw new Error(data?.message || `${res.status} — ${res.statusText}`);
+  if (!data) throw new Error("A API não retornou um JSON válido.");
+
   const blacklist = new Set(BLACKLIST.map((n) => String(n).trim().toLowerCase()));
-  const filtered = repos.filter((r) => !blacklist.has(String(r.name).trim().toLowerCase())).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  const filtered = data.filter((r) => !blacklist.has(String(r.name).trim().toLowerCase())).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const reposWithLanguages = [];
   const CONCURRENCY = 5;
 
@@ -39,6 +51,7 @@ export async function getGitHubRepos() {
             next: { revalidate: REVALIDATE_TIME }
           });
 
+          if (!langRes.ok) return { ...repo, languages: [] };
           const langsJson = await langRes.json();
 
           return {

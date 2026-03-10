@@ -13,6 +13,7 @@
   width: 100%;
   text-align: center;
   font-size: larger;
+  grid-area: 1/1/2/3;
 }
 
 .errorMessage { color: var(--error-color); }
