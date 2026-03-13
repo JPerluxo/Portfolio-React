@@ -20,6 +20,7 @@
   max-width: 900px;
   position: relative;
   padding-left: 1.6rem;
+  padding-bottom: 2rem;
 }
 
 .timeline::before {
@@ -33,39 +34,24 @@
   opacity: 25%;
 }
 
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
 .skillsContainer h2 { text-align: center; }
 
 .skillsContainer ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  align-items: center;
+  align-items: start;
 }
-
-.skillsContainer li {
-  position: relative;
-  width: 6rem;
-  height: 6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--glass-bg-color);
-  box-shadow: 0 .4rem .5rem .25rem var(--shadow-color);
-  border: 1px solid transparent;
-  border-radius: .75rem;
-  transition: border-style .5s, border-color .5s, transform .15s;
-}
-
-.skillsContainer li:hover {
-  border-style: solid;
-  border-color: var(--accent-color);
-  transform: translateY(-3px);
-}
-
-.skillsContainer svg { font-size: xx-large; }
 
 @keyframes fadeInUp {
   to {
@@ -82,8 +68,5 @@
 
   .about h1 { font-size: 2rem; }
 
-  .skillsContainer ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .skillsContainer ul { grid-template-columns: 1fr; }
 }
