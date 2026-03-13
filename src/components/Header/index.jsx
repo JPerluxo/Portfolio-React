@@ -4,11 +4,13 @@ import styles from "./index.module.css";
 
 import Logo from "../../images/logo.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaFile } from "react-icons/fa6";
 import Modal from "react-modal";
 
 const Header = () => {
   const [theme, setTheme] = useState("dark");
+  const pathname = usePathname();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,6 +40,8 @@ const Header = () => {
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const isActive = (href) => pathname === href;
+
   return (
     <header className={styles.header}>
       <Logo className={styles.logo}/>
@@ -49,9 +53,9 @@ const Header = () => {
       </button>
       <div className={`${styles.menuContainer} ${isMobileMenuOpen ? styles.activeMenu : ""}`}>
         <nav>
-          <Link href="/" onClick={closeMobileMenu}>Início</Link>
-          <Link href="/about" onClick={closeMobileMenu}>Sobre</Link>
-          <Link href="/projects" onClick={closeMobileMenu}>Projetos</Link>
+          <Link href="/" className={isActive("/") ? styles.activeLink : ""} aria-current={isActive("/") ? "page" : undefined} onClick={closeMobileMenu}>Início</Link>
+          <Link href="/about" className={isActive("/about") ? styles.activeLink : ""} aria-current={isActive("/about") ? "page" : undefined} onClick={closeMobileMenu}>Sobre</Link>
+          <Link href="/projects" className={isActive("/projects") ? styles.activeLink : ""} aria-current={isActive("/projects") ? "page" : undefined} onClick={closeMobileMenu}>Projetos</Link>
         </nav>
         <div>
           <button type="button" onClick={() => { setIsModalOpen(true); closeMobileMenu(); }} aria-label="Visualizar currículo"><FaFile aria-hidden={true}/>Visualizar CV</button>

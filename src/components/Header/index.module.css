@@ -56,7 +56,7 @@
   transition: .5s;
 }
 
-.menuContainer nav a:hover { color: var(--accent-color); }
+.menuContainer nav a.activeLink, .menuContainer nav a:hover { color: var(--accent-color); }
 
 .menuContainer div {
   display: flex;
@@ -150,8 +150,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background-color: transparent;
     z-index: 999;
   }
@@ -169,10 +169,10 @@
     top: 0;
     right: -100%;
     width: 280px;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--glass-bg-color);
-    backdrop-filter: blur(10px);
-    box-shadow: -5px 0 15px var(--shadow-color);
+    backdrop-filter: blur(20px);
+    box-shadow: -.4rem 0 1rem .5rem var(--shadow-color);
     flex-direction: column;
     justify-content: center;
     gap: 2rem;

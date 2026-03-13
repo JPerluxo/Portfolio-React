@@ -7,7 +7,7 @@
   border: 1px solid transparent;
   border-radius: .75rem;
   padding: .5rem;
-  box-shadow: 0 .4rem .5rem .25rem var(--shadow-color);
+  box-shadow: 0 0 .5rem .25rem var(--shadow-color);
   transition: transform .15s;
 }
 
@@ -75,7 +75,6 @@
   flex-wrap: wrap;
   gap: .625rem;
   margin: .375rem -.5rem 0 -.5rem;
-  border-top: 1px solid var(--glass-bg-color);
 }
 
 .links a {
@@ -84,7 +83,7 @@
   padding: .375rem .625rem;
   border-radius: .75rem;
   background-color: var(--glass-bg-color);
-  box-shadow: 0 .4rem .5rem .25rem var(--shadow-color);
+  box-shadow: 0 0 .5rem .25rem var(--shadow-color);
   color: var(--accent-color);
   transition: transform .15s;
 }
