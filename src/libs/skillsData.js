@@ -111,7 +111,7 @@ const ABILITIES = [
     desc: "Conhecimento em boas práticas para a proteção de sistemas, mitigação de riscos e garantia da integridade das informações no ambiente digital."
   },
   {
-    name: "Lei Geral de Proteção de Dados Pessoais (LGPD)",
+    name: "LGPD",
     focus: 2,
     tech: 2,
     desc: "Compreensão das diretrizes de privacidade e proteção de dados, visando a conformidade e o tratamento seguro das informações dos usuários."
