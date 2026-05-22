@@ -10,7 +10,7 @@ const EXPERIENCES = [
       "Criação e replicação de imagens em servidores e estações de trabalho.",
       "Remoção de vírus e instalação de softwares, drivers e antivírus."
     ],
-    tags: ["Suporte técnico", "Suporte ao usuário remoto", "Comunicação", "Microsoft Office"]
+    tags: ["Suporte técnico", "Suporte ao usuário remoto", "Comunicação", "Microsoft Office", "Segurança da informação", "LGPD"]
   },
   {
     title: "Analista Desenvolvedor de Sistemas Jr",
